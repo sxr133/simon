@@ -4,13 +4,13 @@ var userClickedPattern = [];
 var started = false;
 var level = 0;
 
-$(document).keypress(function() {
+$(document).on("keypress touchstart", (function() {
   if (!started) {
     $("#level-title").text("Level " + level);
     nextSequence();
     started = true;
   }
-});
+}));
 
 $(".btn").click(function() {
   var userChosenColour = $(this).attr("id");
